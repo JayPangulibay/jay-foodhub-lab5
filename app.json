@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Jay FoodHub",
+    "slug": "jay-foodhub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#3368A0"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.jayfoodhub.app"
+    },
+    "android": {
+      "package": "com.jayfoodhub.app",
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-sqlite"
+    ]
+  }
+}
