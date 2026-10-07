@@ -45,7 +45,7 @@ export function OrderHistoryScreen({ orderId }: { orderId: number }) {
 
   return (
     <Screen background={color.surface}>
-      <PageHeader title={`Order #JF-${orderId}`} leading="arrow-left" onLeading={back} />
+      <PageHeader title={`Order #JF-${orderId}`} leading="chevron-left" onLeading={back} />
 
       {!order ? (
         <View style={styles.empty}>

@@ -40,7 +40,7 @@ export function OrderDetailsScreen({ dishId }: { dishId: string }) {
 
   return (
     <Screen background={color.surface}>
-      <PageHeader title="Order Details" leading="arrow-left" onLeading={back} />
+      <PageHeader title="Order Details" leading="chevron-left" onLeading={back} />
 
       <ScrollView
         style={styles.flex}

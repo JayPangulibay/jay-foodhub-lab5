@@ -15,7 +15,7 @@ import { BlueHeader } from '../components/Chrome';
 import { Button, Field, Toggle } from '../components/Controls';
 import { Icon, IconName } from '../components/Icon';
 import { useScale } from '../components/scale';
-import { useApp, useNavigate, type StateAddress } from '../state/AppContext';
+import { useApp, useBack, useNavigate, type StateAddress } from '../state/AppContext';
 import { STATIONS } from '../data/menu';
 import { addAddressDB } from '../services/db';
 
@@ -47,6 +47,7 @@ const TITLE_CASE_KEYS: (keyof StateAddress)[] = ['street', 'city', 'estate', 'bu
 export function AddAddressScreen() {
   const { state, dispatch } = useApp();
   const navigate = useNavigate();
+  const back = useBack();
   const { px } = useScale();
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -87,6 +88,8 @@ export function AddAddressScreen() {
     <Screen background={color.surface} withStatusBar={false}>
       <BlueHeader
         title="Add Address"
+        leading="chevron-left"
+        onLeading={back}
         trailing="more-horizontal"
         bottomOffset={18}
       />

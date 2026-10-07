@@ -171,7 +171,23 @@ export function HomeScreen() {
               <Text style={[styles.menuPrice, { fontSize: px(14), lineHeight: px(17) }]}>
                 ${dish.price}
               </Text>
-              <Icon name="chevron-right" size={px(17)} color={color.brand} />
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={`Add ${dish.name} to cart`}
+                hitSlop={8}
+                onPress={() => dispatch({ type: 'cartAdd', dishId: dish.id })}
+                style={({ pressed }) => [
+                  styles.menuAdd,
+                  {
+                    width: px(28),
+                    height: px(28),
+                    borderRadius: px(14),
+                    opacity: pressed ? 0.85 : 1,
+                  },
+                ]}
+              >
+                <Icon name="plus" size={px(15)} color={color.surface} />
+              </Pressable>
             </Pressable>
           ))}
         </View>
@@ -256,4 +272,9 @@ const styles = StyleSheet.create({
   menuName: { fontFamily: font.regular, color: color.brand },
   menuNote: { fontFamily: font.regular, color: color.brand, opacity: 0.52 },
   menuPrice: { fontFamily: font.extraBold, color: color.accent },
+  menuAdd: {
+    backgroundColor: color.accent,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

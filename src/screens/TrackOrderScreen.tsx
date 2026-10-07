@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { color, font, radius, shadow, text } from '../theme';
 import { Screen } from '../components/Screen';
-import { PageHeader } from '../components/Chrome';
+import { BottomNav, PageHeader } from '../components/Chrome';
 import { Icon } from '../components/Icon';
 import { useScale } from '../components/scale';
 import { useApp, useBack } from '../state/AppContext';
@@ -27,7 +27,7 @@ export function TrackOrderScreen() {
       <View style={[styles.map, { height: px(404) }]}>
         <MapArt px={px} />
         <View style={styles.mapHeader}>
-          <PageHeader title="Track Order" leading="arrow-left" onLeading={back} />
+          <PageHeader title="Track Order" leading="chevron-left" onLeading={back} />
         </View>
 
         {/* Arrival card floats over the map. */}
@@ -145,6 +145,9 @@ export function TrackOrderScreen() {
           </View>
         </View>
       </View>
+
+      {/* Persistent navigation — stays reachable while tracking. */}
+      <BottomNav active={state.tab} onSelect={(key) => dispatch({ type: 'tab', tab: key })} />
     </Screen>
   );
 }

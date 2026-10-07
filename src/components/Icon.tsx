@@ -20,6 +20,7 @@ export type IconName =
   | 'chevron-right'
   | 'chevron-down'
   | 'chevron-up'
+  | 'chevron-left'
   | 'house'
   | 'receipt'
   | 'badge-dollar'
@@ -261,6 +262,8 @@ function render(name: IconName, p: any, tint: string, filled: boolean) {
       return <Path d="m5.5 9.5 6.5 6.5 6.5-6.5" {...p} />;
     case 'chevron-up':
       return <Path d="m5.5 14.5 6.5-6.5 6.5 6.5" {...p} />;
+    case 'chevron-left':
+      return <Path d="m14.5 5.5-6.5 6.5 6.5 6.5" {...p} />;
 
     /* --- Actions --- */
     case 'plus':
